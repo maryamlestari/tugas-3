@@ -38,13 +38,25 @@
                                 @enderror
                             </div>
                         </div>
+                                
+                            <div class="form-group row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Captcha') }}</label>
 
-                        <div class="form-group row">
-                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <div class="col-md-4">
+                                {!! captcha_img('flat') !!}
+                            </div>
 
+                            <!-- Perintah Refresh -->
+                                <div class="col-md-1 ">
+                                    <button class="btn btn-secondary">
+                                        {{_('Refresh') }}
+                                    </button>
+                                </div>
+                            </div>
+                                <div class="form-group row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
                             <div class="col-md-6">
-                                {!! captcha_img() !!}
-                                <input id="captcha" type="captcha" class="form-control @error('captcha') is-invalid @enderror" name="captcha" placeholder="Enter Captcha">
+                                <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror" name="captcha" placeholder="Enter Captcha">
 
                                 @error('captcha')
                                     <span class="invalid-feedback" role="alert">
@@ -57,10 +69,9 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{old('remember') ? 'checked' : ' ' }}>
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('   Remember Me') }}
                                     </label>
                                 </div>
                             </div>
