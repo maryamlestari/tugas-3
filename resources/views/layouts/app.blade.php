@@ -18,9 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -36,7 +33,26 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                    @auth
 
+                      <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Master Data <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> 
+                                    <a class="dropdown-item" href="{{ route('kategori_artikel.index') }}">{{ __('Kategori Artikel') }}</a>
+                                    <a class="dropdown-item" href="{{ route('artikel.index') }}">{{ __('Artikel') }}</a>
+                                    <a class="dropdown-item" href="{{ route('kategori_berita.index') }}">{{ __('Kategori Berita') }}</a>
+                                    <a class="dropdown-item" href="{{ route('berita.index') }}">{{ __('Berita') }}</a>
+                                    <a class="dropdown-item" href="{{ route('kategori_galeri.index') }}">{{ __('Kategori Galeri') }}</a>
+                                    <a class="dropdown-item" href="{{ route('galeri.index') }}">{{ __('Galeri') }}</a>
+                                    <a class="dropdown-item" href="{{ route('kategori_pengumuman.index') }}">{{ __('Kategori Pengumuman') }}</a>
+                                    <a class="dropdown-item" href="{{ route('pengumuman.index') }}">{{ __('Pengumuman') }}</a>
+                                </div>
+                            </li>
+
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -79,5 +95,12 @@
             @yield('content')
         </main>
     </div>
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+    @yield('scripts')
 </body>
 </html>

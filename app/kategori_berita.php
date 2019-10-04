@@ -8,6 +8,7 @@ class kategori_berita extends Model
 {
     
     protected $table='kategori_berita';
-	protected $fillable=['users_id','nama'];
+	    protected $fillable=['nama','users_id'];
 
 }
+ 

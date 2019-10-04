@@ -8,6 +8,6 @@ class pengumuman extends Model
 {
     
     protected $table='pengumuman';
-	protected $fillable=['users_id','nama'];
+	protected $fillable=['judul','isi','users_id','kategori_pengumuman_id'];
 
 }
