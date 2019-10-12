@@ -15,6 +15,7 @@
                   <td>keterangan</td>
                   <td>path</td>
                   <td>create</td>
+                  <td>update</td>
                   <td>Aksi</td>
 
                   
@@ -26,12 +27,21 @@
           <td>{!! $item->keterangan !!}</td>
           <td>{!! $item->path!!}</td>
           <td>{!! $item->created_at !!}</td>
+          <td>{!! $item->updated_at !!}</td>
           <td>
 
         
 
                 <a href="{!! route('galeri.show',[$item->id]) !!}" class="btn btn-sm btn-success">
                   lihat </a>
+                <a href="{!! route('galeri.edit',[$item->id]) !!}" class="btn btn-sm btn-warning">
+                  ubah
+                </a>
+                {!! Form::open(['route' => ['kategori_galeri.destroy',$item->id],'method'=>'delete']) !!}
+
+                 {!! Form::submit('Hapus',['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?')"]) !!}
+
+                 {!! Form::close() !!}
                 </td>
                </tr>
                @endforeach

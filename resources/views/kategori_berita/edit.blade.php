@@ -1,22 +1,24 @@
-@extends('layouts.app')
+ @extends('layouts.app')
 @section('content')
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
               <div class=card>
-               <div class="card-header">TAMBAH KATEGORI PENGUMUMAN</div>
+               <div class="card-header">TAMBAH KATEGORI BERITA</div>
+
                <div class="card-body">
-               	 {!! Form::open(['route' => 'kategori_pengumuman.store','method' => 'post']) !!}
-                  @include('kategori_pengumuman.form')
+
+                  {!! Form::model($KategoriBerita,['route' => ['kategori_berita.update',$KategoriBerita->id],'method'=>'patch']) !!}
+                  @include('kategori_berita.form')
                   {!! Form::close() !!}
                   
                 </form>
-               		
+                  
                </div>
              </div>
         </div>
     </div>
  </div>
                
-@endsection
+@endsection 

@@ -6,9 +6,13 @@
         <div class="col-md-8">
               <div class=card>
                <div class="card-header">TAMBAH KATEGORI ARTIKEL</div>
+
                <div class="card-body">
-                <form method="post" action="{!! route('kategori_artikel.store') !!}">
+                
+                  {!! Form::open(['route' => 'kategori_artikel.store','method' => 'post']) !!}
                   @include('kategori_artikel.form')
+                  {!! Form::close() !!}
+                  
                 </form>
                   
                </div>

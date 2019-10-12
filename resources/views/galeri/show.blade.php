@@ -14,8 +14,8 @@
                     </div>
 
                     <div class="form-group row">
-                         <label  class="col-md-4 col-form-label text-md-right">Nama</label>
-                         <label  class="col-md-8 col-form-label text-md-left">{!! $galeri->nama !!}</label>
+                         <label  class="col-md-4 col-form-label text-md-right">Judul</label>
+                         <label  class="col-md-8 col-form-label text-md-left">{!! $galeri->judul !!}</label>
                     </div>
 
                      <div class="form-group row">

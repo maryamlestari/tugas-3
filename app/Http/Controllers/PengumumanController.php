@@ -28,4 +28,24 @@ class PengumumanController extends Controller
       return redirect(route('pengumuman.index'));
 
    }
-}
+   public function edit($id){  
+    $Pengumuman=pengumuman::find($id);
+
+    if(empty($Pengumuman)){
+      return redirect(route('pengumuman.index'));
+    }
+    return view('pengumuman.edit',compact('Pengumuman'));
+  }
+  public function update($id,Request $request){
+    $Pengumuman=pengumuman::find($id);
+    $input=$request->all();
+
+    if(empty($Pengumuman)){
+      return redirect(route('pengumuman.index'));
+    }
+    $Pengumuman->update($input);
+
+    return redirect(route('pengumuman.index'));
+  }
+
+  }

@@ -30,6 +30,16 @@
 
                 <a href="{!! route('kategori_berita.show',[$item->id]) !!}" class="btn btn-sm btn-success">
                   lihat </a>
+                
+                <a href="{!! route('kategori_berita.edit',[$item->id]) !!}" class="btn btn-sm btn-warning">
+                  ubah
+                </a>
+                 {!! Form::open(['route' => ['kategori_berita.destroy',$item->id],'method'=>'delete']) !!}
+
+                 {!! Form::submit('Hapus',['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?')"]) !!}
+
+                 {!! Form::close() !!}
+
                 </td>
                </tr>
                @endforeach

@@ -28,4 +28,24 @@ class BeritaController extends Controller
       return redirect(route('berita.index'));
 
    }
-}
+   public function edit($id){  
+    $Berita=berita::find($id);
+
+    if(empty($Berita)){
+      return redirect(route('berita.index'));
+    }
+    return view('berita.edit',compact('Berita'));
+  }
+  public function update($id,Request $request){
+    $Berita=berita::find($id);
+    $input=$request->all();
+
+    if(empty($Berita)){
+      return redirect(route('berita.index'));
+    }
+    $Berita->update($input);
+
+    return redirect(route('berita.index'));
+  }
+
+  }

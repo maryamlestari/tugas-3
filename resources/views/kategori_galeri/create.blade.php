@@ -7,8 +7,10 @@
               <div class=card>
                <div class="card-header">TAMBAH KATEGORI GALERI</div>
                <div class="card-body">
-                <form method="post" action="{!! route('kategori_galeri.store') !!}">
+                 {!! Form::open(['route' => 'kategori_galeri.store','method' => 'post']) !!}
                   @include('kategori_galeri.form')
+                  {!! Form::close() !!}
+                
                 </form>
                   
                </div>

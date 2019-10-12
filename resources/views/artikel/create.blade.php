@@ -7,9 +7,10 @@
               <div class=card>
                <div class="card-header">LIST ARTIKEL</div>
                <div class="card-body">
-                <form method="post" action="{!! route('artikel.store') !!}">
+             {!! Form::open(['route' => 'artikel.store','method' => 'post']) !!}
                   @include('artikel.form')
-                </form>
+                  {!! Form::close() !!}
+          
                   
                </div>
              </div>
